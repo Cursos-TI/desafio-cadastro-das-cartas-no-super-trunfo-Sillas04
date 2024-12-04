@@ -39,10 +39,7 @@ int main() {
     int pib_capta_vencedora_A01, pib_capta_vencedora_A02, pib_capta_vencedora_B01, pib_capta_vencedora_B02;
    
     //Variaveis para armazenar o "SUPER PODER" de cada carta somando seus atributos
-    float power_a01;
-    float power_a02;
-    float power_b01;
-    float power_b02;
+    float power_a01, power_a02, power_b01, power_b02;
     
     // atribuindo valor a variavel "estado_A".
     printf("Digite o nome do Estado:\n");
@@ -209,7 +206,7 @@ int main() {
 
     printf("+-+-+-+-+-+-+-+-+-+-+- DADOS DE ESTADOS +-+-+-+-+-+-+-+-+-+-+-\n\n");
 
-    //---------------------------------------------- Exibição de propriedades do estado A
+    //--------------------------------- Exibição de propriedades do estado A
     printf(" ************  ESTADO:  %s  **************\n\n", estado_A);
     printf("População: %lu habitantes \nÁrea: %.1f km² \nPIB: R$ %.2f \nPontos turísticos: %d \nDensidade populacional: %.2f hab/Km² \nPIB per capta: R$ %.2f \n\n", total_habitantes_a, total_km_area_a, total_pib_a, total_pontos_turisticos_a, total_densidade_a, total_pib_capta_a);
 
@@ -236,6 +233,7 @@ int main() {
     //SUPER PODER DAS CARTAS a01 - b01
     power_a01 =(pib_capta_a01 / 1000) + (densidade_pp_a01 / 100);
     power_b01 =(pib_capta_b01 / 1000) + (densidade_pp_b01 / 100);
+    
     //Exibindo os dados de vantagem da cidade_a01 em cima da cidade_b01 e vice-versa.
     printf("-------------------------------------------- Vantagem --------------------------------------------\n\n");
     printf("Cidade: %s                  ||    Cidade: %s \n",cidade_a01, cidade_b01);
@@ -247,6 +245,16 @@ int main() {
     printf("Densidade População: %d     ||    Densidade População: %d \n", densidade_vencedora_A01, densidade_vencedora_B01);
     printf("PIB per capta: %d           ||    PIB per capta: %d \n", pib_capta_vencedora_A01, pib_capta_vencedora_B01);
     printf("SUPER PODER: %.1f           ||    SUPER PODER: %.1f \n\n", power_a01, power_b01);
+
+    /* UM BREVE COMENTÁRIO SOBRE O CÓDIGO ACIMA! LINHA 220 - 249
+    legal! cidade_a01 faz a comparação com somente cidade_b01, antes de deixá-lo desta forma eu estruturei mas ja 
+    comparando duas cidades com uma: EX:  cidade_a01 >= cidade_b01, cidade_b02
+    mas desta forma vamos supor que a cidade seja maior do que uma e menor que outra, a exibição iria dar como false (0), 
+    então prefiri deixar desta forma que está, mesmo que os códigos fiquem imensos! até porque ainda não estamos utilizando
+    as estruturas de repetição!
+    E devido ao super poder... Eu queria que ficasse um número abaixo de cem para melhor comparação então pesquisei formas
+    de deixar essa vantagem em cima de somente duas propriedades das cidades.
+    E ainda estou me perguntando... como juntarei a primeira letra do estado com o código da cidade   */
 
     return 0;
 }
