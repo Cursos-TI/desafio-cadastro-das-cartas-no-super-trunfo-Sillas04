@@ -195,6 +195,7 @@ int main() {
     total_pib_capta_a = (float) total_pib_a / total_habitantes_a;  
 
     // Atribuindo valores as variaveis gerais do estado B
+    
     total_habitantes_b = habitantes_b01 + habitantes_b02;   
     total_km_area_b = km_area_b01 + km_area_b02;   
     total_pib_b = pib_b01 + pib_b02;  
@@ -223,6 +224,9 @@ int main() {
     pib_capta_vencedora_A01 = pib_capta_a01 >= pib_capta_b01;
 
     //Implementando a lógica para comparação de cidade_b01 com cidade_b01
+    // *********
+    // ********   Não seria comparar b01 com a02 ou b02? Porque você está comparando as mesmas cidades que antes, só inverteu a posição no operador lógico
+    // ********
     populacao_vencedora_B01 = habitantes_b01 >= habitantes_a01;
     area_vencedora_B01 = km_area_b01 >= km_area_a01;
     pib_vencedora_B01 = pib_b01 >= pib_a01;
@@ -252,9 +256,17 @@ int main() {
     mas desta forma vamos supor que a cidade seja maior do que uma e menor que outra, a exibição iria dar como false (0), 
     então prefiri deixar desta forma que está, mesmo que os códigos fiquem imensos! até porque ainda não estamos utilizando
     as estruturas de repetição!
+
+    //Veja comentário na linha 228.
+    
     E devido ao super poder... Eu queria que ficasse um número abaixo de cem para melhor comparação então pesquisei formas
     de deixar essa vantagem em cima de somente duas propriedades das cidades.
-    E ainda estou me perguntando... como juntarei a primeira letra do estado com o código da cidade   */
+    E ainda estou me perguntando... como juntarei a primeira letra do estado com o código da cidade   
+
+    //Como você criou variáveis separadas, você pode fazer isso com concatenação de strings (não vemos isso nesta disciplina) ou trabalhando com manipulação de ponteiros, 
+    //assunto que será visto na disciplina de estrutura de dados.
+    
+    */
 
     return 0;
 }
